@@ -1,0 +1,382 @@
+:root{
+    --bgcolor: grey;
+    --texthead: white;
+    --textcolor: black;
+    --imagen: url("./assets/img/bug.gif");
+    --javacolor:red;
+    --labcolor: blue;
+    --visualcolor: purple;
+    --puzzlecolor: darkgreen;
+    --titlecolor: red;
+    --footercolor: darkslategrey;
+}
+*{
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    & a{
+        color:antiquewhite;
+        text-decoration: none;
+    }
+    & h3{
+        font-size: 20px;
+        padding:.5em 0 .5em 0;
+    }
+   body{
+    width:100%;
+   }
+}
+header{
+    display:grid;
+    background-color: var(--bgcolor);
+    
+    position: fixed;
+    height: 4em;
+    width: 100%;
+    top:0;
+    z-index: 1000;
+    .logo{
+        & img{
+            height:4em;
+            vertical-align: middle;
+
+        }
+        & h1{
+            display:inline-block;
+        }
+      
+    }
+    .navBar{
+        color: var(--texthead);
+        font-size: 18px;
+        position:absolute;
+        top:1em;
+        right:08%;
+        text-align: center;
+       & a::before {
+        content: '| ';          
+        
+    }
+    
+}
+
+}
+/*defino los títulos de cada seccion*/
+ .seccionTitulo{ 
+    font-size: 1.5em;
+    width:100%;
+    /*border:2px solid black;   */
+    color: var(--titlecolor);
+    text-align: center;
+   margin: 2em auto 2em auto;
+   & h2{
+    text-transform:uppercase;
+}
+/*texto comun a todas las secciones*/
+ }
+ .texto{
+    text-align: right;
+    margin-right: 4em;
+    color: var(--textcolor);  
+    font-weight: 900;
+}
+
+main{
+    width: 100%;
+    padding:0 auto 0 auto;
+}
+/*defino la animación como fondo en una barra que tiene el ancho de la pantalla además de la descripción*/ 
+
+main #imagenPrincipal{
+    padding-top: 9em;
+    position:relative;
+    width:100%;
+    height: 350px;    
+    background-repeat:repeat;
+    background-image:    
+    linear-gradient(to left, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+    var(--imagen);       
+    
+
+   
+/* botones al final del texto */
+    .texto.idea,
+    .texto.blog{
+        margin-top: 1em;
+        float: right;
+        border:2px solid;
+        padding: .2em;
+        border-radius: 5px;
+        font-weight: 400;
+        
+    }
+    .texto.idea{
+        border-color: white;
+        
+    }
+    .texto.blog{
+        border-color: black;
+        background-color: pink;
+    }
+
+}
+
+/*presento los juegos en cajas con título y descripción el not first of type me permite mantener el titulo fuera del flex*/
+
+#cajaJuegos:not(:first-of-type){
+    width:100%;
+        justify-content: center; 
+    display: flex;
+    flex-flow: row wrap;  
+   
+}
+ #cajaJuegos img:hover{
+   background-color: red;
+   opacity: 0.8;
+   filter: saturate(7);
+
+}
+.juego{
+       padding:0 30px 0 30px;
+    width:350px;
+    height: 450px;
+    
+  /*  border:2px solid black;*/
+   
+}
+.vistaJuego{
+        margin-top:5%;
+    display:inline-block;
+    width:100%;
+    height:auto;
+    border-radius:5%;
+}
+.tituloJuego{
+        position:relative;
+        display:inline-block;
+    
+        
+   
+}
+/* administro las etiquetas de los juegos según programación y categoría de juego - la idea de colocar los valores como content es para poder etiquetar directamente desde el class de cada juego sin posibilidad de error en los tags*/
+ .pro, 
+ .cat{
+    font-size: 0.8em;
+    color:var(--texthead);
+    padding: .2em;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-weight: 400;
+           
+}
+.javascript{
+    &::after{
+        content:"javaScript";
+    }
+    background-color: var(--javacolor);
+}
+.visual{
+    &::before{
+        content:"visualBasic";
+    }
+    background-color: var(--visualcolor);
+}
+.laberinto{
+    &::before{
+        content:"laberinto";
+    }
+    background-color: var(--labcolor);
+}
+.puzzle{
+    &::before{
+        content:"puzzle";
+    }
+    background-color: var(--puzzlecolor);
+}
+/*texto en reversa para el reverse snake*/
+    .rev{
+        display:inline-block;
+        transform: rotate(180deg);
+        color:blue;
+        text-align: center;
+    
+         }
+
+    /*staff -creo una única clase que contiene una foto y otra que contiene el texto: divStaff
+    en staff invierto la imagen de los bugs. luego invierto los contenidos de divStaff para que la foto y el texto esten en sentido correcto*/
+
+#staff{
+    transform: scaleY(-1);
+    position:relative;
+    width:100%;
+    display: flex;
+    background-repeat:repeat;
+    
+    
+    background-image: 
+    
+    linear-gradient(to right, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 1)),
+    var(--imagen);   
+    
+   
+}
+.divStaff{    
+    transform: scaleY(-1);
+    height: 350px;
+    width:auto;
+    vertical-align:top;
+   /* border:2px solid black;*/
+    & img{    
+        margin-top: 0%;
+    max-height: 100%; 
+     
+    }
+    & h3{
+        
+        padding-top:4.5em;
+    }
+    & p, h3{
+        margin-left:auto;
+        margin-right: auto;
+        padding-left: 10%;
+        color:var(--texthead);
+        font-weight: 400;
+        
+    }
+}
+
+/*seccion ideas : usé el mismo recurso de first of type que en cajajuegos en caso de usar un flex*/
+#ideas:not(:first-of-child){
+   /* border:2px solid black;*/
+    position:relative;
+    width:100%;
+    display: flex;
+    
+}
+.tituloFormulario{        
+    font-weight: 700;
+    margin: 0 auto 2em 5%;   
+    width:50%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+}
+.formulario{  
+    /*armo dos div donde el primero contiene los dos campos de nombre y email, el segundo solo el textarea*/
+    .lineaFormulario{
+       
+       margin: 1.5em auto;
+       display:flex;
+       /*esta parte es util solo para la primer linea donde debo armar dos campos con un espacio en el medio mediante width 45 en campo y space between en justify content*/
+       flex-direction: row;
+       justify-content: space-between;
+       .campo{    
+       font-size: 1.5em;
+       width: 45%;
+              }
+       #tuIdea{
+       width: 100%;
+       height:200px;
+       font-size: 1.5em;
+       }
+    
+    }
+    & button{
+        font-size: 1.5em;
+        margin-bottom:2em;
+    }
+}
+.tuIdea{
+    padding-top:1.2em;
+    display: block;
+}
+/* voy con el footer */
+footer{
+    position: relative;
+    margin-bottom: 10px;
+    background-color: var(--footercolor);
+    color: var(--textcolor);
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    min-height:50px;
+    padding-top: 1em;
+    .footBar{
+       width:80%;
+       padding: 0 auto 0 auto;
+       display:flex;
+       flex-direction: row;
+       justify-content: space-between;
+       
+
+    }
+}
+
+    /*adaptando pantalla...*/
+    @media only screen and (max-width:1250px)
+    {  #staff {
+        display:flex;
+        /*esta linea me organiza la imagen arriba y el texto abajo, como está con la scale invertida me queda ok*/
+        flex-direction: column-reverse;
+       
+          
+    }
+    .divStaff{    
+        
+        width: 100%;
+        height: auto;
+       padding: 0 5% 0 15%;
+       /*margin: 0;*/
+        & img{   
+             
+           width:80%;
+           height:auto;
+           margin-left:auto;
+           margin-right:auto;
+           margin-top:0;
+           margin-bottom:-15%;
+        }
+       & p, h3{
+        max-width:80%;       
+            
+            margin:0 20% 0 auto;
+            padding: 0 auto 0 auto;
+            
+            
+        }
+        & h3{
+            margin-top: 7%;
+            
+
+        }
+          & p{
+            
+            margin-bottom:10%;
+          
+       
+    }
+
+    }
+@media only screen and (max-width:950px) {
+       
+   header .logo{
+      
+      text-align: center;
+       padding-top: 50px ;
+       background-color: var(--bgcolor);
+       width: 100%;
+       
+        
+    }
+    header .navBar{
+    justify-content: center;
+    width:100%;
+    right:0%;
+    }
+ 
+           }
+       } 
+       
+     
