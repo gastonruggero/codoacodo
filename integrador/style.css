@@ -3,6 +3,7 @@
     --texthead: white;
     --textcolor: white;
     --imagen: url("./assets/img/hawaii.jpg");
+    --negocioscolor: green;
     --javacolor:red;
     --labcolor: blue;
     --visualcolor: purple;
@@ -12,7 +13,7 @@
 }
 *{
     
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding:0px;
     margin:0px;
     box-sizing: border-box;
@@ -24,17 +25,14 @@
         font-size: 20px;
         padding:.5em 0 .5em 0;
     }
-   body{
-    width:100%;
-   }
+   
 }
 header{
     display:grid;
-    background-color: var(--bgcolor);
-    
+    background-color: var(--bgcolor);    
     position: fixed;
     height: 4em;
-    width: 100%;
+    width: 100vw;
     top:0;
     z-index: 1000;
     .logo{
@@ -45,18 +43,20 @@ header{
         }
         & h1{
             display:inline-block;
+            vertical-align: middle;
         }
       
     }
     .navBar{
         color: var(--texthead);
         font-size: 18px;
+        font-weight: 200;
         position:absolute;
         top:1em;
         right:08%;
         text-align: center;
-       & a::before {
-        content: '| ';          
+       & a {
+        margin-left:20px;         
         
     }
     
@@ -79,13 +79,12 @@ header{
  .texto{
     
     color: var(--textcolor);  
-    font-weight: 500;
+    font-weight: 100;
     
 }
 
 main{
-    width: 100%;
-    padding:0 auto 0 auto;
+    width: 100%;    
 }
 
 main #imagenPrincipal{
@@ -95,7 +94,7 @@ main #imagenPrincipal{
     display:block;
     padding-top: 12em;
     top:4em;
-    min-width:100%;
+    width:100%;
     height: 700px;
     background-size:cover;
     background-repeat: no-repeat;
@@ -119,20 +118,20 @@ main #imagenPrincipal{
     .texto.blog{
         margin-top: 1em;
         float: right;
-        border:2px solid;
-        padding: .2em;
+        border:1px solid;
+        padding: .5em;
         border-radius: 5px;
         font-weight: 400;
         
     }
     .texto.idea{
         border-color: white;
-        margin-right:5%; 
+        margin-right:1em; 
     }
     .texto.blog{
         border-color: black;
-        background-color: pink;
-       
+        background-color: lightgreen;
+        margin-right:5%; 
         
     }
 
@@ -142,9 +141,10 @@ main #imagenPrincipal{
 
 #cajaJuegos:not(:first-of-type){
     width:100%;
-        justify-content: center; 
+    justify-content: center; 
     display: flex;
-    flex-flow: row wrap;  
+    flex-flow: row wrap;
+    margin:3em;  
    
 }
  #cajaJuegos img:hover{
@@ -156,7 +156,8 @@ main #imagenPrincipal{
 .juego{
        padding:0 30px 0 30px;
     width:350px;
-    height: 450px;
+    height: auto;
+   
     
   /*  border:2px solid black;*/
    
@@ -167,6 +168,7 @@ main #imagenPrincipal{
     width:100%;
     height:auto;
     border-radius:5%;
+    margin-bottom:20px;
 }
 .tituloJuego{
         position:relative;
@@ -178,11 +180,12 @@ main #imagenPrincipal{
 /* administro las etiquetas de los juegos según programación y categoría de juego - la idea de colocar los valores como content es para poder etiquetar directamente desde el class de cada juego sin posibilidad de error en los tags*/
  .pro, 
  .cat{
-    font-size: 0.8em;
+    
     color:var(--texthead);
-    padding: .2em;
+    padding: .3em;
+    
     border-radius: 5px;
-    margin-left: 10px;
+    margin-right:10px;
     font-weight: 400;
            
 }
@@ -192,12 +195,7 @@ main #imagenPrincipal{
     }
     background-color: var(--javacolor);
 }
-.visual{
-    &::before{
-        content:"visualBasic";
-    }
-    background-color: var(--visualcolor);
-}
+
 .startups{
     &::before{
         content:"startups";
@@ -210,55 +208,43 @@ main #imagenPrincipal{
     }
     background-color: var(--puzzlecolor);
 }
-/*texto en reversa para el reverse snake*/
-    .rev{
-        display:inline-block;
-        transform: rotate(180deg);
-        color:blue;
-        text-align: center;
-    
-         }
+.negocios{
+    &::before{
+        content:"negocios"
+    }
+    background-color: var(--negocioscolor)
+}
 
     /*staff -creo una única clase que contiene una foto y otra que contiene el texto: divStaff
     en staff invierto la imagen de los bugs. luego invierto los contenidos de divStaff para que la foto y el texto esten en sentido correcto*/
 
 #staff{
-    transform: scaleY(-1);
+   
     position:relative;
     width:100%;
     display: flex;
-    background-repeat:repeat;
-    
-    
-    background-image: 
-    
-    linear-gradient(to right, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 1)),
-    var(--imagen);   
-    
+    overflow: hidden;
+   
    
 }
-.divStaff{    
-    transform: scaleY(-1);
+.divStaff{        
     height: 350px;
-    width:auto;
+    width:100%;
     vertical-align:top;
-   /* border:2px solid black;*/
+    color:var(--textcolor);
+    background-color: grey;
     & img{    
         margin-top: 0%;
-    max-height: 100%; 
-     
-    }
-    & h3{
-        
+        width:100%;
+         }
+    & h3{        
         padding-top:4.5em;
     }
     & p, h3{
         margin-left:auto;
         margin-right: auto;
         padding-left: 10%;
-        color:var(--texthead);
-        font-weight: 400;
-        
+        font-weight: 400;        
     }
 }
 
@@ -374,21 +360,22 @@ footer{
     }
 
     }
-@media only screen and (max-width:950px) {
+@media only screen and (max-width:1100px) {
        
    header .logo{
-      
+      grid-auto-rows: auto;
       text-align: center;
        padding-top: 50px ;
        background-color: var(--bgcolor);
        width: 100%;
-       
+      
         
     }
     header .navBar{
     justify-content: center;
     width:100%;
     right:0%;
+    
     }
  
            }
