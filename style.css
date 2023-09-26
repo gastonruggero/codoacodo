@@ -387,7 +387,7 @@ footer{
         flex-direction: column;
        flex-wrap: wrap;
        & .footItem{
-        
+    width: 80px;
        margin:.3em auto .3em auto;
     }
     }
