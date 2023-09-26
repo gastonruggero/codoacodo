@@ -383,7 +383,7 @@ footer{
     right:0%;
     
     }
-    footer.footBar{
+   .footBar{
         flex-direction: column;
        flex-wrap: wrap;
        & .footItem{
