@@ -235,7 +235,7 @@ main{
     width:100%;
     display: flex;
     overflow: hidden;
-   
+   margin-top:2em;
    
 }
 .divStaff{        
@@ -446,6 +446,16 @@ footer{
               
                   }
                }
+           }
+
+           @media print{
+            header{
+            position:relative;
+            .navBar{
+                margin-top: .8em;
+                font-size: 15px;
+            }
+            }
            }
        
      
